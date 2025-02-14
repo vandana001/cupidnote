@@ -17,9 +17,9 @@
   }
 }
 
-* {
+/* * {
   cursor: none !important;
-}
+} */
 body {
   color: var(--foreground);
   background: var(--background);
