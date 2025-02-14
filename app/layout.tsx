@@ -2,11 +2,16 @@ import type { Metadata } from "next";
 import { Inter, Manrope, Orbitron, Poppins, Give_You_Glory, Mynerve } from "next/font/google";
 import "./globals.css";
 
-// ✅ Load Google Fonts via `next/font/google` (Optimized for Next.js)
+// ✅ Correct font imports (No `weight` for Mynerve & Give_You_Glory)
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron", display: "swap" });
-const poppins = Poppins({ subsets: ["latin"], variable: "--font-poppins", weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], display: "swap" });
+const poppins = Poppins({
+  subsets: ["latin"], 
+  variable: "--font-poppins", 
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], 
+  display: "swap"
+});
 const giveYouGlory = Give_You_Glory({
   subsets: ["latin"], variable: "--font-give-you-glory", display: "swap",
   weight: "400"
@@ -17,7 +22,7 @@ const mynerve = Mynerve({
 });
 
 export const metadata: Metadata = {
-  title: "cupidnote",
+  title: "CupidNote",
   description: "Your own love story",
 };
 
