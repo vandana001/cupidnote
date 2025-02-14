@@ -107,10 +107,12 @@
         padding: 0.875rem 1.75rem;
     }
     body {
+        font-family: var(--font-orbitron), sans-serif;
         -webkit-text-size-adjust: 100%;
         font-smooth: always;
         text-rendering: optimizeLegibility;
     }
+    
 }
 
 /* Small Mobile Breakpoint */
