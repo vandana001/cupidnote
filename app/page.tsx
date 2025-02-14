@@ -25,7 +25,7 @@ export default function Home() {
             className={styles.button} 
             onClick={handleButtonClick}
           >
-            What's Cooking!!!???
+            What&apos;s Cooking!!!???
           </button>
         </div>
       </div>
