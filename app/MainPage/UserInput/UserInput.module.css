@@ -8,8 +8,14 @@
     padding: 2rem;
     background: #FAFFE4;
     gap: 2rem;
+  
 
     
+}
+
+.container, .fonts, .textsmall {
+    opacity: 1 !important;
+    color: black !important;
 }
 
 .imagesContainer {
