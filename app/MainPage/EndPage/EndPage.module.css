@@ -19,7 +19,8 @@
   max-width: 42rem;
   height: calc(100vh - 8rem);
   max-height: 42rem;
-  background-color: rgba(255, 220, 220, 1); /* White overlay for readability */
+  background-color: rgba(255, 105, 105, 1);
+   /* White overlay for readability */
   padding: 2rem 1.5rem;
   overflow-y: auto;
   box-sizing: border-box;
