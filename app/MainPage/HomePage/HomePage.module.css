@@ -108,9 +108,10 @@
         margin-top: 1.5rem;
         padding: 0.875rem 1.75rem;
     }
-
-    .fonts {
-        color:black !important;
+    body {
+        -webkit-text-size-adjust: 100%;
+        font-smooth: always;
+        text-rendering: optimizeLegibility;
     }
 }
 
