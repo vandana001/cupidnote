@@ -42,9 +42,10 @@ const EndPage: React.FC = () => {
 
   // Save letter content in sessionStorage
   const handleContentChange = (event: React.FormEvent<HTMLSpanElement>) => {
-    const newContent = event.currentTarget.innerText.trim();
-    setLetterContent(newContent);
-    sessionStorage.setItem("letterContent", newContent);
+    if (!inputRef.current?.innerText.trim()) {
+        alert("Please write your letter before saving.");
+        return;
+      }
   };
 
   // Convert letter to an image
