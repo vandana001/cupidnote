@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useRouter } from 'next/navigation';
 import styles from './MainPage/HomePage/HomePage.module.css';  
 
@@ -14,8 +14,18 @@ export default function Home() {
     <div className={styles.container}>
       <div className={styles.mainContainer}>
         <div className={styles.pngcontainer}>
-          <video className={styles.video} autoPlay loop muted playsInline>
-            <source src="/together.mp4" type="video/mp4" />
+          
+           <video 
+            className={styles.video} 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+          >
+            <source 
+              src="/together.mp4" 
+              type="video/mp4"
+            />
             Your browser does not support the video tag.
           </video>
         </div>

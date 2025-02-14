@@ -47,8 +47,11 @@ const EndPage: React.FC = () => {
       alert("Please write your letter before saving.");
       return;
     }
-    console.log("Saving letter:", contentText); // Now used!
-    
+    console.log("Saving letter:", contentText);
+    // Actually use contentText, for example:
+    sessionStorage.setItem('letterContent', contentText);
+    // Or store it in state:
+    // setLetterContent(contentText);
   };
 
   // Convert letter to an image
