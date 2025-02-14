@@ -28,15 +28,22 @@ body {
   
 }
 
+* {
+  -webkit-text-fill-color: black !important;  
+  color: black !important;
+  opacity: 1 !important;  
+}
+
+
 :root {
   --background: #ffffff;
-  --foreground: #000000;  /* ✅ Change to black */
+  --foreground: #000000;  
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ffffff;  /* ✅ Ensure contrast in dark mode */
+    --foreground: #ffffff;  
   }
 }
 
