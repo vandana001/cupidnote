@@ -28,3 +28,15 @@ body {
   
 }
 
+:root {
+  --background: #ffffff;
+  --foreground: #000000;  /* ✅ Change to black */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ffffff;  /* ✅ Ensure contrast in dark mode */
+  }
+}
+
