@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
-
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -13,37 +10,17 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #000000;
+    --foreground: #ffffff;
   }
 }
 
-/* * {
-  cursor: none !important;
-} */
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-  
-  
 }
 
 * {
-  -webkit-text-fill-color: black !important;  
-  color: black !important;
-  opacity: 1 !important;  
+  color: var(--foreground) !important;
+  opacity: 1 !important;
 }
-
-
-:root {
-  --background: #ffffff;
-  --foreground: #000000;  
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ffffff;  
-  }
-}
-
