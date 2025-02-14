@@ -1,46 +1,32 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Manrope, Orbitron, Poppins, Give_You_Glory, Mynerve } from "next/font/google";
 import "./globals.css";
-import { Head } from "next/document";
 
-
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+// ✅ Load Google Fonts via `next/font/google` (Optimized for Next.js)
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
+const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron", display: "swap" });
+const poppins = Poppins({ subsets: ["latin"], variable: "--font-poppins", weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], display: "swap" });
+const giveYouGlory = Give_You_Glory({
+  subsets: ["latin"], variable: "--font-give-you-glory", display: "swap",
+  weight: "400"
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const mynerve = Mynerve({
+  subsets: ["latin"], variable: "--font-mynerve", display: "swap",
+  weight: "400"
 });
 
 export const metadata: Metadata = {
   title: "cupidnote",
-  description: "your own love story",
+  description: "Your own love story",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Give+You+Glory&family=Inter:wght@100..900&family=Manrope:wght@200..800&family=Mynerve&family=Orbitron:wght@400..900&family=Poppins:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
-      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`} 
+        className={`${inter.variable} ${manrope.variable} ${orbitron.variable} ${poppins.variable} ${giveYouGlory.variable} ${mynerve.variable} antialiased`}
       >
-        
         {children}
       </body>
     </html>
