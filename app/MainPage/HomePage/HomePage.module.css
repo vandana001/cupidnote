@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.container {
+    background: #FAC0D5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    background: #ffe7ff;
+    min-height: 40rem;
+    border-radius: 2rem;
+    border: 1.5px solid grey;
+    opacity: 0.9;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.video {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 2rem;
+}
+
+.pngcontainer {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelopecontainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.fonts {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.button {
+    background: #F8FBA0;
+    color: black;
+    border: 1px solid black;
+    padding: 1rem 2rem;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 2rem;
+    white-space: nowrap;
+}
+
+.button:hover {
+    background: #FAFC70;
+    transform: scale(1.05);
+}
+
+/* Tablet Breakpoint */
+@media (max-width: 900px) {
+    .mainContainer {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+    
+    .video {
+        max-width: 100%;
+    }
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 768px) {
+    .mainContainer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .envelopecontainer {
+        align-items: center;
+    }
+
+    .video {
+        margin: 0;
+        border-radius: 1rem;
+    }
+
+    .button {
+        margin-top: 1.5rem;
+        padding: 0.875rem 1.75rem;
+    }
+}
+
+/* Small Mobile Breakpoint */
+@media (max-width: 480px) {
+    .container {
+        padding: 0.5rem;
+    }
+
+    .mainContainer {
+        border-radius: 1rem;
+    }
+}
