@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-
 "use client";
 import { useRouter } from 'next/navigation';
 import styles from './MainPage/HomePage/HomePage.module.css';  
