@@ -42,17 +42,10 @@ const EndPage: React.FC = () => {
 
   // Save letter content in sessionStorage
   const handleContentChange = (event: React.FormEvent<HTMLSpanElement>) => {
-    const contentText = inputRef.current?.innerText.trim();
-    if (!contentText) {
-      alert("Please write your letter before saving.");
-      return;
-    }
-    console.log("Saving letter:", contentText);
-    // Actually use contentText, for example:
-    sessionStorage.setItem('letterContent', contentText);
-    // Or store it in state:
-    // setLetterContent(contentText);
+    const newContent = event.currentTarget.innerText.trim();
+    setLetterContent(newContent);
   };
+  
 
   // Convert letter to an image
   const handleSave = async () => {

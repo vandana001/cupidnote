@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/app/components/CustomCursor";
-import { Give_You_Glory } from 'next/font/google';
 
-export const giveYouGlory = Give_You_Glory({
-  weight: '400',
-  subsets: ['latin'],
-});
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
