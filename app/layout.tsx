@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter, Manrope, Orbitron, Poppins, Give_You_Glory, Mynerve } from "next/font/google";
 import "./globals.css";
 
-// ✅ Correct font imports (No `weight` for Mynerve & Give_You_Glory)
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--font-orbitron", display: "swap" });
@@ -13,11 +12,15 @@ const poppins = Poppins({
   display: "swap"
 });
 const giveYouGlory = Give_You_Glory({
-  subsets: ["latin"], variable: "--font-give-you-glory", display: "swap",
+  subsets: ["latin"], 
+  variable: "--font-give-you-glory", 
+  display: "swap",
   weight: "400"
 });
 const mynerve = Mynerve({
-  subsets: ["latin"], variable: "--font-mynerve", display: "swap",
+  subsets: ["latin"], 
+  variable: "--font-mynerve", 
+  display: "swap",
   weight: "400"
 });
 
@@ -29,8 +32,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${manrope.variable} ${orbitron.variable} ${poppins.variable} ${giveYouGlory.variable} ${mynerve.variable} antialiased`}
+      <body className={`
+        ${inter.variable} 
+        ${manrope.variable} 
+        ${orbitron.variable} 
+        ${poppins.variable} 
+        ${giveYouGlory.variable} 
+        ${mynerve.variable}`}
       >
         {children}
       </body>

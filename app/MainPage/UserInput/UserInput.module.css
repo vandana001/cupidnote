@@ -8,15 +8,21 @@
     padding: 2rem;
     background: #FAFFE4;
     gap: 2rem;
+  }
   
+  .fonts {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-family: var(--font-orbitron), system-ui, sans-serif;
+    margin: 0;
+    color: black;
+  }
 
-    
-}
-
-.container, .fonts, .textsmall {
-    opacity: 1 !important;
-    color: black !important;
-}
+  .textsmall {
+    font-size: 12px;
+    font-family: var(--font-orbitron), system-ui, sans-serif;
+    margin: 0;
+    color: black;
+  }
 
 .imagesContainer {
     display: flex;
@@ -125,19 +131,14 @@
 
 .fonts {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-orbitron), system-ui, sans-serif;
     margin: 0;
-    color: var(--foreground) !important;
-   
-}
-
-.textsmall{
+    color: var(--foreground);
+  }
+  
+  .textsmall {
     font-size: 12px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-orbitron), system-ui, sans-serif;
     margin: 0;
-}
-body {
-    -webkit-text-size-adjust: 100%;
-    font-smooth: always;
-    text-rendering: optimizeLegibility;
-}
+    color: var(--foreground);
+  }

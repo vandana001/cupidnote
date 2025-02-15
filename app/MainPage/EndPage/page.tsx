@@ -24,57 +24,67 @@ const EndPage: React.FC = () => {
     if (sessionLetter) setLetterContent(sessionLetter);
   }, []);
 
-  // Ensure cursor starts inside the editable span
+  // Handle cursor position
   useEffect(() => {
-    setTimeout(() => {
+    if (isReadOnly) return;
+
+    const setCursorToEnd = () => {
       if (!inputRef.current) return;
 
       const range = document.createRange();
       const selection = window.getSelection();
-
+      
+      // Set range to end of content
       range.selectNodeContents(inputRef.current);
       range.collapse(false);
 
-      selection?.removeAllRanges();
-      selection?.addRange(range);
-    }, 100);
-  }, [letterContent]);
+      if (selection) {
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
+    };
 
-  // Save letter content in sessionStorage
+    // Small delay to ensure DOM is ready
+    requestAnimationFrame(setCursorToEnd);
+  }, [isReadOnly]);
+
+  // Save letter content in sessionStorage and prevent duplication
   const handleContentChange = (event: React.FormEvent<HTMLSpanElement>) => {
-    const newContent = event.currentTarget.innerText.trim();
-    setLetterContent(newContent);
+    event.preventDefault();
+    const target = event.currentTarget;
+    
+    // Remove any duplicate "To My Favorite Person ❤️" text
+    let content = target.innerText;
+    const header = "To My Favorite Person ❤️";
+    if (content.startsWith(header)) {
+      content = content.substring(header.length).trim();
+    }
+    
+    setLetterContent(content);
+    sessionStorage.setItem("letterContent", content);
   };
-  
 
   // Convert letter to an image
   const handleSave = async () => {
-    if (!inputRef.current) return;
-    
-    // const contentText = inputRef.current.innerText.trim();
-    // if (!contentText) {
-    //   alert("Please write your letter before saving.");
-    //   return;
-    // }
-
+    if (!contentRef.current) return;
     setIsReadOnly(true);
 
-    // Capture letter as an image
-    const canvas = await html2canvas(contentRef.current!);
-    const imgData = canvas.toDataURL("image/png");
-    setLetterImage(imgData);
-    localStorage.setItem("letterImage", imgData);
-    // alert("Letter saved as an image and ready to share!");
+    try {
+      const canvas = await html2canvas(contentRef.current);
+      const imgData = canvas.toDataURL("image/png");
+      setLetterImage(imgData);
+      localStorage.setItem("letterImage", imgData);
+    } catch (error) {
+      console.error("Error saving image:", error);
+      setIsReadOnly(false);
+    }
   };
 
   return (
     <div className={styles.container}>
-      {/* Letter Content */}
       <div
         className={styles.letter}
         ref={contentRef}
-        contentEditable={!isReadOnly}
-        suppressContentEditableWarning
         style={{
           lineHeight: 2,
           fontSize: "25px",
@@ -84,25 +94,31 @@ const EndPage: React.FC = () => {
           "--background-image": imageSrc ? `url(${imageSrc})` : "none",
         } as React.CSSProperties}
       >
-        <span className={styles.fonts} contentEditable={false}>
+        <div className={styles.fonts} contentEditable={false}>
           To My Favorite Person ❤️
-        </span>
+        </div>
         <span
           ref={inputRef}
           contentEditable={!isReadOnly}
           suppressContentEditableWarning
           onInput={handleContentChange}
+          className={styles.contentEditable}
         >
           {letterContent}
         </span>
       </div>
 
-      {/* Buttons */}
       <div className={styles.buttonContainer}>
         {!isReadOnly ? (
-          <button className={styles.button} onClick={handleSave}>Save as Image</button>
+          <button className={styles.button} onClick={handleSave}>
+            Save as Image
+          </button>
         ) : (
-          <a href={letterImage || undefined} download="letter.png" className={styles.button}>
+          <a 
+            href={letterImage || undefined} 
+            download="letter.png" 
+            className={styles.button}
+          >
             Download
           </a>
         )}

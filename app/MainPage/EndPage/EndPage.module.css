@@ -14,21 +14,20 @@
 }
 
 .letter {
-  margin-top:1rem;
+  margin-top: 1rem;
   width: 100%;
   max-width: 42rem;
   height: calc(100vh - 8rem);
   max-height: 42rem;
-  background-color: rgba(255, 105, 105, 1);
-   /* White overlay for readability */
+  background-color: rgba(255, 182, 193, 1);
   padding: 2rem 1.5rem;
   overflow-y: auto;
   box-sizing: border-box;
   position: relative;
   border-radius: 8px;
+  color: var(--foreground);
 }
 
-/* Add a background image inside the letter with reduced opacity */
 .letter::before {
   content: "";
   position: absolute;
@@ -39,12 +38,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: var(--background-image); /* Dynamic background */
-  opacity: 0.1; /* Adjust this for lower opacity */
+  background-image: var(--background-image);
+  opacity: 0.1;
   z-index: 1;
-  overflow-wrap:break-word;
-  word-wrap:break-word;
-  white-space:normal;
 }
 
 /* Ensure text remains above the background */
@@ -53,7 +49,6 @@
   z-index: 2;
 }
 
-
 /* Button styles */
 .buttonContainer {
   display: flex;
@@ -61,24 +56,9 @@
   margin-top: 1rem;
 }
 
-.button {
-  background: #F8FBA0;
-  color: black;
-  border: 1px solid black;
-  padding: 1rem 2rem;
-  font-size: 1.125rem;
-  font-family: 'Orbitron', sans-serif;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  /* margin-top: 2rem; */
-}
-
-
-
 .button:hover {
-  background: #FAFC70;
-    transform: scale(1.05);
+  background: #fafc70;
+  transform: scale(1.05);
 }
 
 /* Ensure text aligns properly when empty */
@@ -89,9 +69,21 @@
 
 .fonts {
   font-size: 20px;
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--font-orbitron), system-ui, sans-serif;
   margin: 0;
- 
+  color: var(--foreground);
+}
+
+.button {
+  background: #f8fba0;
+  color: black;
+  border: 1px solid black;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 body {
