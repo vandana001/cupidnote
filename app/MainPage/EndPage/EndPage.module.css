@@ -11,8 +11,9 @@
   padding: 1rem;
   position: relative;
   background-image: url("/texturedletter.png");
+  background-size: cover;
+  background-position: center;
 }
-
 .letter {
   margin-top: 1rem;
   width: 100%;
@@ -86,10 +87,3 @@
   transition: all 0.3s ease;
 }
 
-body {
-  font-family: var(--font-orbitron), sans-serif;
-  -webkit-text-size-adjust: 100%;
-  font-smooth: always;
-  text-rendering: optimizeLegibility;
-  color: var(--foreground) !important;
-}
