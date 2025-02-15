@@ -14,13 +14,14 @@
   background-size: cover;
   background-position: center;
 }
+
 .letter {
   margin-top: 1rem;
   width: 100%;
   max-width: 42rem;
   height: calc(100vh - 8rem);
   max-height: 42rem;
-  background-color: rgba(255, 182, 193, 1);
+  background-color:rgba(255, 230, 235, 1);
   padding: 2rem 1.5rem;
   overflow-y: auto;
   box-sizing: border-box;
@@ -44,17 +45,27 @@
   z-index: 1;
 }
 
-/* Ensure text remains above the background */
-.letter * {
+.letterContent {
   position: relative;
   z-index: 2;
 }
 
-/* Button styles */
 .buttonContainer {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+.button {
+  background: #f8fba0;
+  color: black;
+  border: 1px solid black;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  font-family: var(--font-orbitron), system-ui, sans-serif;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .button:hover {
